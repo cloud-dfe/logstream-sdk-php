@@ -1,0 +1,15 @@
+{
+    "name": "logstream/monolog-handler",
+    "description": "Monolog handler for LogStream — Papertrail-compatible log aggregator",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "LogStream\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.2",
+        "monolog/monolog": "^3.0"
+    }
+}
