@@ -1,15 +1,25 @@
 {
     "name": "logstream/monolog-handler",
-    "description": "Monolog handler for LogStream — Papertrail-compatible log aggregator",
+    "description": "Monolog handler for LogStream — send Laravel logs to your self-hosted LogStream instance",
     "type": "library",
     "license": "MIT",
+    "keywords": ["laravel", "monolog", "logging", "logstream", "log aggregator"],
+    "homepage": "https://github.com/cloud-dfe/logstream-sdk",
+    "authors": [
+        {
+            "name": "Cleverton Souza",
+            "email": "cleverton.marodim@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "monolog/monolog": "^3.0"
+    },
     "autoload": {
         "psr-4": {
             "LogStream\\": "src/"
         }
     },
-    "require": {
-        "php": "^8.2",
-        "monolog/monolog": "^3.0"
-    }
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }
