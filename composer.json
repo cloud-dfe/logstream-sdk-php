@@ -1,6 +1,6 @@
 {
-    "name": "logstream/monolog-handler",
-    "description": "Monolog handler for LogStream — send Laravel logs to your self-hosted LogStream instance",
+    "name": "logstream/laravel-sdk",
+    "description": "Laravel SDK for LogStream — send your application logs to your self-hosted LogStream instance in real time",
     "type": "library",
     "license": "MIT",
     "keywords": ["laravel", "monolog", "logging", "logstream", "log aggregator"],
