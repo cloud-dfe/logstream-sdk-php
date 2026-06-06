@@ -106,7 +106,7 @@ class LogStreamClient
                 ],
             ]);
             curl_exec($ch);
-            curl_close($ch);
+            unset($ch);
         } catch (\Throwable $e) {
             // Silently fail — never let logging break the app
         }

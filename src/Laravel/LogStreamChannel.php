@@ -2,19 +2,13 @@
 
 namespace LogStream\Laravel;
 
-use LogStream\Logger\LogStreamLogger;
 use LogStream\LogStreamClient;
+use Monolog\Logger;
 
 class LogStreamChannel
 {
-    public function __invoke(array $config): LogStreamLogger
+    public function __invoke(array $config): Logger
     {
-        if (!class_exists('\Psr\Log\AbstractLogger')) {
-            throw new \RuntimeException(
-                'psr/log is required for the Laravel channel. Run: composer require psr/log'
-            );
-        }
-
         $environment = isset($config['environment'])
             ? $config['environment']
             : (function_exists('app') ? app()->environment() : 'production');
@@ -28,6 +22,6 @@ class LogStreamChannel
             isset($config['timeout']) ? (int) $config['timeout'] : 3
         );
 
-        return new LogStreamLogger($client);
+        return new Logger('logstream', [new LogStreamMonologHandler($client)]);
     }
 }
