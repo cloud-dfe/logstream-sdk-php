@@ -30,6 +30,25 @@ class LogStreamMonologHandler extends AbstractProcessingHandler
             $context = $record->context;
         }
 
-        $this->client->log($level, $message, $context);
+        $this->client->log($level, $message, $this->normalizeContext($context));
+    }
+
+    private function normalizeContext(array $context): array
+    {
+        foreach ($context as $key => $value) {
+            if ($value instanceof \Throwable) {
+                $context[$key] = [
+                    'class' => get_class($value),
+                    'message' => $value->getMessage(),
+                    'code' => $value->getCode(),
+                    'file' => $value->getFile(),
+                    'line' => $value->getLine(),
+                    'trace' => $value->getTraceAsString(),
+                    'previous' => $value->getPrevious() ? $value->getPrevious()->getMessage() : null,
+                ];
+            }
+        }
+
+        return $context;
     }
 }

@@ -12,7 +12,8 @@
         }
     ],
     "require": {
-        "php": "^7.2|^8.0"
+        "php": "^7.2|^8.0",
+        "logstream/laravel-sdk": "dev-master"
     },
     "suggest": {
         "psr/log": "Required for PSR-3 standalone usage (LogStreamLogger)",
