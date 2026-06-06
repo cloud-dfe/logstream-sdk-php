@@ -1,10 +1,10 @@
 {
-    "name": "logstream/laravel-sdk",
-    "description": "PHP SDK for LogStream — send your application logs to your self-hosted LogStream instance in real time",
+    "name": "cloud-dfe/logstream-sdk-php",
+    "description": "Laravel SDK for LogStream — send your application logs to your self-hosted LogStream instance in real time",
     "type": "library",
     "license": "MIT",
-    "keywords": ["php", "laravel", "logging", "logstream", "log aggregator"],
-    "homepage": "https://github.com/cloud-dfe/logstream-sdk",
+    "keywords": ["laravel", "monolog", "logging", "logstream", "log aggregator"],
+    "homepage": "https://github.com/cloud-dfe/logstream-sdk-php",
     "authors": [
         {
             "name": "Cleverton Souza",
